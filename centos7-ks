@@ -1,4 +1,4 @@
-#version=RHEL7
+#version=RHEL7 note the vmware fusion nic eno16777736
 
 auth --enableshadow --passalgo=sha512
 cdrom
