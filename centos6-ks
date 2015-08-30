@@ -1,14 +1,14 @@
 install 
 text
 unsupported_hardware 
-url --url http://172.16.105.100/centos-6/
+cdrom
 
-lang en_US.UTF-8
+lang en_UK.UTF-8
 keyboard uk
 
 network --onboot yes --device eth0 --bootproto dhcp --noipv6
 
-rootpw  password
+rootpw  --iscrypted $6$9YiXO2N5dUKyQW9b$HpvyRNJ5XxKVmLzVR7VwNz38b0expBQRPOti7jIXKIQP97Jad4g53bE19ewYAzk87AhvxAoBcbk4LvUSVJC7u0
 firewall --disabled
 authconfig --enableshadow --passalgo=sha512
 selinux --disabled
@@ -33,24 +33,3 @@ reboot
 
 %end
 
-%post --nochroot
-exec < /dev/tty3 > /dev/tty3
-#changing to VT 3 so that we can see whats going on....
-/usr/bin/chvt 3
-(
-cp -va /etc/resolv.conf /mnt/sysimage/etc/resolv.conf
-/usr/bin/chvt 1
-) 2>&1 | tee /mnt/sysimage/root/install.postnochroot.log
-%end
-
-%post
-exec < /dev/tty3 > /dev/tty3
-#changing to VT 3 so that we can see whats going on....
-/usr/bin/chvt 3
-(
-
-echo Executing script
-
-sync
-) 2>&1 | tee /root/install.post.log
-%end
