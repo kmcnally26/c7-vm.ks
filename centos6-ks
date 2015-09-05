@@ -41,7 +41,7 @@ git
 %post
 
 echo 'export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[37m\]\w\[\033[m\]\$ "' >> /root/.bashrc
-wget -O /root/papply.sh https://raw.githubusercontent.com/kmcnally26/boot-strappers/master/install-puppet-apply-c6.sh
+curl -sf -o /root/papply.sh -L https://raw.githubusercontent.com/kmcnally26/boot-strappers/master/install-puppet-apply-c6.sh
 
 
 
