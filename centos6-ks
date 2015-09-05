@@ -1,12 +1,12 @@
 install 
 text
 unsupported_hardware 
-cdrom
+--url http://mirror.centos.org/centos/6/os/x86_64/
 
 lang en_UK.UTF-8
 keyboard uk
 
-network --onboot yes --device eth0 --bootproto dhcp --noipv6
+network --onboot yes --device eth0 --bootproto dhcp --noipv6 --hostname server.local.lan
 
 rootpw  --iscrypted $6$9YiXO2N5dUKyQW9b$HpvyRNJ5XxKVmLzVR7VwNz38b0expBQRPOti7jIXKIQP97Jad4g53bE19ewYAzk87AhvxAoBcbk4LvUSVJC7u0
 firewall --disabled
