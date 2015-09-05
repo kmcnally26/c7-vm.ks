@@ -1,7 +1,7 @@
 install 
 text
 unsupported_hardware 
---url http://mirror.centos.org/centos/6/os/x86_64/
+cdrom
 
 lang en_UK.UTF-8
 keyboard uk
